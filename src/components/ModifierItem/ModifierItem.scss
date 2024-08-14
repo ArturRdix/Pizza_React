@@ -1,0 +1,61 @@
+.modifier-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e5e5e5;
+  padding: 5px 3px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  user-select: none;
+  .left-block,
+  .right-block {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .left-block {
+    .check-icon {
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+      padding: 2px;
+      border: 2px solid gray;
+      border-radius: 5px;
+      fill: transparent;
+      transition: 0.3s;
+      &.active {
+        border: 2px solid #fe5f1e;
+        fill: #fe5f1e;
+      }
+    }
+  }
+  .right-block {
+    gap: 15px;
+    .quant-regul {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      button {
+        font-size: 16px;
+        color: #fe5f1e;
+        font-weight: 600;
+        width: 22px;
+        height: 22px;
+        border: 1px solid #fe5f1e;
+        border-radius: 5px;
+        transition: 0.3s;
+        &:hover:not(:disabled) {
+          background-color: #fe5f1e;
+          color: #fff;
+        }
+        &:disabled {
+          cursor: not-allowed;
+          color: gray;
+          border: 1px solid gray;
+        }
+      }
+    }
+  }
+  &.active {
+    background-color: #ffd5c4;
+  }
+}

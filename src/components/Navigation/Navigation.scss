@@ -1,0 +1,37 @@
+.nav {
+  background-color: white;
+  padding-block: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  &--list {
+    display: flex;
+    gap: 9px;
+    &--item {
+      color: black;
+      padding: 12px 30px;
+      background-color: transparent;
+      font-weight: 700;
+      border-radius: 30px;
+      cursor: pointer;
+      &.active {
+        background-color: #222;
+        color: white;
+      }
+      &:hover:not(.active) {
+        background-color: #e8e8e8;
+      }
+    }
+  }
+  &--sort {
+  }
+}
+
+@media (max-width: 500px) {
+  .nav--list--item {
+    padding: 7px 19px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+}

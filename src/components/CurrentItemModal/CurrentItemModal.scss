@@ -1,0 +1,129 @@
+.current-item--wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000080;
+  opacity: 0;
+  backdrop-filter: blur(0px);
+  pointer-events: none;
+  z-index: 1000;
+  transition: 0.2s;
+  .current-item--block {
+    transition: 0.2s;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 500px;
+    max-height: 100%;
+    background: #fff;
+    margin-inline: auto;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    & > * {
+      padding: 20px 30px;
+    }
+    .close-icon {
+      fill: black;
+      padding: 0;
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      top: 10px;
+      z-index: 1002;
+      left: 10px;
+      cursor: pointer;
+    }
+    &--content {
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      img {
+        width: 100%;
+      }
+      h2 {
+        text-transform: uppercase;
+      }
+      span.weight {
+        color: #fe5f1e;
+        padding: 1px 3px;
+        background-color: #fe5f1e47;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+      p {
+        color: gray;
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+    &--add-cart {
+      border-top: 2px solid #fe5f1e;
+      display: flex;
+      justify-content: space-between;
+
+      .quantity-regul {
+        display: flex;
+        align-items: center;
+        span {
+          font-size: 18px;
+          width: 35px;
+          text-align: center;
+        }
+        button {
+          font-size: 22px;
+          color: #fe5f1e;
+          font-weight: 600;
+          width: 35px;
+          height: 35px;
+          border: 1px solid #fe5f1e;
+          border-radius: 5px;
+          transition: 0.3s;
+          &:disabled {
+            color: gray;
+            border: 1px solid gray;
+            cursor: not-allowed;
+          }
+          &:hover:not(:disabled) {
+            background-color: #fe5f1e;
+            color: white;
+          }
+        }
+      }
+      .add-order-block {
+        display: flex;
+        .add-cart {
+          font-weight: 600;
+          background: #fe5f1e;
+          padding-inline: 15px;
+          font-size: 15px;
+          border-radius: 5px;
+          color: white;
+        }
+      }
+    }
+  }
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+    background: #00000080;
+    backdrop-filter: blur(9px);
+    .current-item--block {
+      top: 0;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .current-item--wrapper {
+    .current-item--block {
+      width: 100%;
+    }
+  }
+}

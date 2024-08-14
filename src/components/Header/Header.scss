@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding-block: 10px;
+  border-bottom: 1px solid #00000040;
+  
+  &--logo-block {
+    display: flex;
+    gap: 15px;
+    line-height: 1;
+    &--img {
+      width: 40px;
+    }
+    &--name-text {
+      h1 {
+        font-size: 28px;
+        font-weight: 800;
+      }
+      p {
+        color: gray;
+      }
+    }
+  }
+  &--cart-block {
+  }
+}
